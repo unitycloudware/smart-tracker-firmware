@@ -1,4 +1,4 @@
-# Welcome to the Smart Tracker Tutorial!
+# Welcome to the Smart Tracker Firmware Tutorial!
 
 ## Quick links
 
@@ -13,19 +13,19 @@ The Smart Tracker Firmware is an example how to implement a monitoring of moving
 
 ### Quick start
 
-Before you start to use the firmware you need to do following steps:
+Before you start to use the firmware you need to do following steps in order to set-up connection to the UCW server:
 
 
 #### Step 1
 
-Change property <b>host</b> for your UCW host. For example when you are running the plugin dht-logger for UCW Portal 
+Change property <b>host</b> for your UCW host. For example when you are running the plugin smart-tracker for UCW Portal 
 on your machine, than use the IP address of your machine. In case you are running a firewall, please make sure port 
-9601 is allowed on firewall.
+9602 is allowed on firewall.
 
 ```
 static UCWConfig cfg = {
   .host = 192.168.0.104,
-  .port = 9601,
+  .port = 9602,
   .isSecuredConnection = false,
   .useMqtt = false,
   .token = "your_token"
@@ -50,7 +50,7 @@ static UCWConfig cfg = {
 #### Step 3
 
 You need a device ID that identifies your device for particular UCW project and it allows to store data in 
-the data stream 'dht-logger'.
+the data stream 'ucw-smarttracker'.
 
 Example: #define DEVICE_ID   "3c483804-74ad-4e1d-b367-0afb6eacd503"
 
