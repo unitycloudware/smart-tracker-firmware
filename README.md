@@ -40,7 +40,7 @@ Access Tokens of the UCW project. The scope of the device token has to be READ_W
 ```
 static UCWConfig cfg = {
   .host = 192.168.0.104,
-  .port = 9601,
+  .port = 9602,
   .isSecuredConnection = false,
   .useMqtt = false,
   .token = "jnfb7600j0tqppi6k4179dm0iaop5u93"
