@@ -11,8 +11,7 @@
   clients.
  */
 
- #include "UCW_GPS.h"
-
+#include "UCW_GPS.h"
 UCW_API_REST ucw_api =  ucw.api();
 
 #define DEVICE_ID   "your_device_id"
