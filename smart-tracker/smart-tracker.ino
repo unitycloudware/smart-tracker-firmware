@@ -11,14 +11,17 @@
   clients.
  */
 
+ #include "UCW_GPS.h"
+
 UCW_API_REST ucw_api =  ucw.api();
 
 #define DEVICE_ID   "your_device_id"
 #define DATA_STREAM "ucw-dhtlogger"
 
+UCW_GPS ucw_gps; //create GPS object
 void setup() {  
   // Start the serial connection
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   while (!Serial) {
     ; // Wait for serial port to connect. Needed for native USB port only
@@ -38,11 +41,14 @@ void setup() {
   Serial.println(" Connected!");
   ucw.printNetworkInfo();
   
-  dht.begin();
+  //startup GPS connection
+  ucw_gps.setupGPS();
 }
 
 void loop() {
   ucw.sys();
+  String data = ucw_gps.readGPS(); // read GPS info
   
+  ucw_api.sendData(DEVICE_ID, DATA_STREAM, data);
   delay(1000);
 }
