@@ -15,7 +15,7 @@
 UCW_API_REST ucw_api =  ucw.api();
 
 #define DEVICE_ID   "your_device_id"
-#define DATA_STREAM "ucw-dhtlogger"
+#define DATA_STREAM "ucw-smarttracker"
 
 UCW_GPS ucw_gps; //create GPS object
 void setup() {  
